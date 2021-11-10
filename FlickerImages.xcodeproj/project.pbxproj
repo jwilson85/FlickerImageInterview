@@ -13,6 +13,12 @@
 		BE04FBD9273B20FA008383E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE04FBD7273B20FA008383E6 /* Main.storyboard */; };
 		BE04FBDB273B20FD008383E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE04FBDA273B20FD008383E6 /* Assets.xcassets */; };
 		BE04FBDE273B20FD008383E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE04FBDC273B20FD008383E6 /* LaunchScreen.storyboard */; };
+		BE04FBE6273B2544008383E6 /* URLEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE04FBE5273B2544008383E6 /* URLEndpoint.swift */; };
+		BE04FBE8273B369C008383E6 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE04FBE7273B369C008383E6 /* APIController.swift */; };
+		BE04FBEA273B36B7008383E6 /* APIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE04FBE9273B36B7008383E6 /* APIModels.swift */; };
+		BE04FBF0273B4AF8008383E6 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE04FBEF273B4AF8008383E6 /* ImageLoader.swift */; };
+		BE04FBF2273B7FF7008383E6 /* ImageDetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE04FBF1273B7FF7008383E6 /* ImageDetailsViewController.storyboard */; };
+		BE04FBF4273B8009008383E6 /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE04FBF3273B8009008383E6 /* ImageDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		BE04FBDA273B20FD008383E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE04FBDD273B20FD008383E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE04FBDF273B20FD008383E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE04FBE5273B2544008383E6 /* URLEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEndpoint.swift; sourceTree = "<group>"; };
+		BE04FBE7273B369C008383E6 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		BE04FBE9273B36B7008383E6 /* APIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModels.swift; sourceTree = "<group>"; };
+		BE04FBEF273B4AF8008383E6 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		BE04FBF1273B7FF7008383E6 /* ImageDetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImageDetailsViewController.storyboard; sourceTree = "<group>"; };
+		BE04FBF3273B8009008383E6 /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +75,12 @@
 				BE04FBDA273B20FD008383E6 /* Assets.xcassets */,
 				BE04FBDC273B20FD008383E6 /* LaunchScreen.storyboard */,
 				BE04FBDF273B20FD008383E6 /* Info.plist */,
+				BE04FBE5273B2544008383E6 /* URLEndpoint.swift */,
+				BE04FBE7273B369C008383E6 /* APIController.swift */,
+				BE04FBE9273B36B7008383E6 /* APIModels.swift */,
+				BE04FBEF273B4AF8008383E6 /* ImageLoader.swift */,
+				BE04FBF1273B7FF7008383E6 /* ImageDetailsViewController.storyboard */,
+				BE04FBF3273B8009008383E6 /* ImageDetailsViewController.swift */,
 			);
 			path = FlickerImages;
 			sourceTree = "<group>";
@@ -125,6 +143,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE04FBF2273B7FF7008383E6 /* ImageDetailsViewController.storyboard in Resources */,
 				BE04FBDE273B20FD008383E6 /* LaunchScreen.storyboard in Resources */,
 				BE04FBDB273B20FD008383E6 /* Assets.xcassets in Resources */,
 				BE04FBD9273B20FA008383E6 /* Main.storyboard in Resources */,
@@ -138,9 +157,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE04FBF0273B4AF8008383E6 /* ImageLoader.swift in Sources */,
+				BE04FBEA273B36B7008383E6 /* APIModels.swift in Sources */,
+				BE04FBE6273B2544008383E6 /* URLEndpoint.swift in Sources */,
 				BE04FBD6273B20FA008383E6 /* ViewController.swift in Sources */,
 				BE04FBD2273B20FA008383E6 /* AppDelegate.swift in Sources */,
 				BE04FBD4273B20FA008383E6 /* SceneDelegate.swift in Sources */,
+				BE04FBF4273B8009008383E6 /* ImageDetailsViewController.swift in Sources */,
+				BE04FBE8273B369C008383E6 /* APIController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +326,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.BR..FlickerImages;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BR.FlickerImages;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -330,7 +354,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.BR..FlickerImages;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BR.FlickerImages;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
