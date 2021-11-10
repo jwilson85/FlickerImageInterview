@@ -13,8 +13,10 @@ class ImageTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLable: UILabel!
     @IBOutlet weak var gradientView: UIView!
     
+    var hasGradient = false
     func setUpGradient() {
         //put gradient behind label
+        hasGradient = true
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = gradientView.bounds
         gradientLayer.colors = [UIColor.clear.cgColor,UIColor.gray.cgColor]
