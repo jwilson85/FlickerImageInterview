@@ -16,11 +16,13 @@ class ImageTableViewCell: UITableViewCell {
     var hasGradient = false
     func setUpGradient() {
         //put gradient behind label
+        if !hasGradient {        
+            let gradientLayer = CAGradientLayer()
+            gradientLayer.frame = gradientView.bounds
+            gradientLayer.colors = [UIColor.clear.cgColor,UIColor.gray.cgColor]
+            gradientView.layer.insertSublayer(gradientLayer, at: 0)
+        }
         hasGradient = true
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = gradientView.bounds
-        gradientLayer.colors = [UIColor.clear.cgColor,UIColor.gray.cgColor]
-        gradientView.layer.insertSublayer(gradientLayer, at: 0)
     }
 }
 

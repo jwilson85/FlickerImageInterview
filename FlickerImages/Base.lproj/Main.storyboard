@@ -30,11 +30,11 @@
                                                     <rect key="frame" x="20" y="11" width="374" height="187"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gen-W3-pfE">
-                                                    <rect key="frame" x="20" y="163" width="374" height="35"/>
+                                                    <rect key="frame" x="40" y="163" width="334" height="35"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="viZ-vo-8Qf">
-                                                    <rect key="frame" x="20" y="163" width="374" height="35"/>
+                                                    <rect key="frame" x="40" y="163" width="334" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="87R-QI-QoD"/>
                                                     </constraints>
@@ -45,16 +45,17 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstItem="viZ-vo-8Qf" firstAttribute="centerX" secondItem="ZS9-jd-6gZ" secondAttribute="centerX" id="2dl-yo-BiK"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="BqB-Yj-xqD" secondAttribute="trailing" id="E7s-CB-opC"/>
                                                 <constraint firstItem="viZ-vo-8Qf" firstAttribute="bottom" secondItem="ZS9-jd-6gZ" secondAttribute="bottomMargin" id="EoX-tF-TFW"/>
                                                 <constraint firstItem="gen-W3-pfE" firstAttribute="leading" secondItem="viZ-vo-8Qf" secondAttribute="leading" id="R14-RT-Urm"/>
-                                                <constraint firstItem="viZ-vo-8Qf" firstAttribute="leading" secondItem="BqB-Yj-xqD" secondAttribute="leading" id="S5r-Cn-Xry"/>
                                                 <constraint firstItem="gen-W3-pfE" firstAttribute="bottom" secondItem="viZ-vo-8Qf" secondAttribute="bottom" id="S6g-tZ-mik"/>
                                                 <constraint firstItem="BqB-Yj-xqD" firstAttribute="leading" secondItem="ZS9-jd-6gZ" secondAttribute="leadingMargin" id="Vln-pQ-AXw"/>
                                                 <constraint firstItem="gen-W3-pfE" firstAttribute="trailing" secondItem="viZ-vo-8Qf" secondAttribute="trailing" id="aks-jE-Lip"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="viZ-vo-8Qf" secondAttribute="trailing" constant="20" id="dTR-k7-nGt"/>
                                                 <constraint firstItem="gen-W3-pfE" firstAttribute="top" secondItem="viZ-vo-8Qf" secondAttribute="top" id="fht-TG-6zt"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="BqB-Yj-xqD" secondAttribute="bottom" id="hmJ-Jc-dp2"/>
-                                                <constraint firstItem="viZ-vo-8Qf" firstAttribute="trailing" secondItem="BqB-Yj-xqD" secondAttribute="trailing" id="kjd-YM-FOX"/>
+                                                <constraint firstItem="viZ-vo-8Qf" firstAttribute="leading" secondItem="ZS9-jd-6gZ" secondAttribute="leadingMargin" constant="20" id="mjk-ej-AYx"/>
                                                 <constraint firstItem="BqB-Yj-xqD" firstAttribute="top" secondItem="ZS9-jd-6gZ" secondAttribute="topMargin" id="oVA-zG-QTu"/>
                                             </constraints>
                                         </tableViewCellContentView>
