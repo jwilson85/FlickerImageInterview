@@ -2,8 +2,8 @@
 //  ImageLoader.swift
 //  FlickerImages
 //
-//  Created by Wilson, Jeremy on 11/9/21.
-//
+//  Found some decent image loading code online
+//  Not sure I like the force unwrapped pointers I would tweak this code with a little more time
 
 import Foundation
 import UIKit
@@ -16,7 +16,6 @@ class ImageLoader {
     
     init() {
         session = URLSession.shared
-        task = URLSessionDownloadTask()
         self.cache = NSCache()
     }
     
