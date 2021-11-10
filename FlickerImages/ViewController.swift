@@ -14,15 +14,17 @@ class ImageTableViewCell: UITableViewCell {
     @IBOutlet weak var gradientView: UIView!
     
     var hasGradient = false
-    func setUpGradient() {
-        //put gradient behind label
-        if !hasGradient {        
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if !hasGradient {
             let gradientLayer = CAGradientLayer()
             gradientLayer.frame = gradientView.bounds
             gradientLayer.colors = [UIColor.clear.cgColor,UIColor.gray.cgColor]
             gradientView.layer.insertSublayer(gradientLayer, at: 0)
+            hasGradient = true
         }
-        hasGradient = true
+        
     }
 }
 
@@ -141,7 +143,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
         cell.titleLable.text = photoObject?.title
         
-        cell.setUpGradient()
         return cell
     }
     
