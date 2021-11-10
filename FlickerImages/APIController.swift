@@ -17,8 +17,8 @@ class APIController {
 
 class SearchEndpoint: NetworkingProtocol {
     
-    func searchPhotos(text: String, completionHandler: @escaping (PhotoData?, Error?) -> ()) {
-        guard let url = URLEndpoint.searchPhotos(text: text).url else {return}
+    func searchPhotos(text: String, page: Int, completionHandler: @escaping (PhotoData?, Error?) -> ()) {
+        guard let url = URLEndpoint.searchPhotos(text: text, page: page).url else {return}
         
         self.requestCodable(url) { data, response, error in
             if let data = data {

@@ -26,7 +26,7 @@ extension Mappable {
 
 // MARK: - PhotoData
 struct PhotoData: Mappable {
-    let photos: Photos?
+    var photos: Photos?
     let stat: String?
 }
 
@@ -36,7 +36,7 @@ struct Photos: Mappable {
     let pages: Int?
     let perpage: Int?
     let total: Int?
-    let photo: [Photo]?
+    var photo: [Photo]?
 }
 
 // MARK: - Photo

@@ -45,12 +45,14 @@ extension URLEndpoint {
         return URLEndpoint(queryItems: queryItems)
     }
     
-    static func searchPhotos(text: String) -> URLEndpoint {
+    static func searchPhotos(text: String, page: Int) -> URLEndpoint {
         let queryItems = [URLQueryItem(name: "method", value: "flickr.photos.search"),
                           URLQueryItem(name: "text", value: text),
                           URLQueryItem(name: "per_page", value: "25"),
                           URLQueryItem(name: "content_type", value: "7"),
                           URLQueryItem(name: "extras", value: "url_s,url_m,url_l"),
+                          URLQueryItem(name: "page", value: String(page))
+                          
                           
         ]
         return URLEndpoint(queryItems: queryItems)

@@ -33,6 +33,8 @@ class ViewController: UIViewController {
     
     var imageLoader = ImageLoader()
     
+    var lastGottenPage = 1
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUpNavbar()
@@ -43,14 +45,19 @@ class ViewController: UIViewController {
         hideKeyboardWhenTappedAround()
         searchTextField.returnKeyType = .done
         searchTextField.text = "yellowstone"
-        searchPhotos(text: "yellowstone")
+        searchPhotos(text: "yellowstone", page: lastGottenPage)
         
-        
+        tableView.prefetchDataSource = self
     }
 
-    func searchPhotos(text: String) {
-        APIController.searchEndpoint.searchPhotos(text: text) { photoData, error in
-            self.photoData = photoData
+    func searchPhotos(text: String, page: Int) {
+        APIController.searchEndpoint.searchPhotos(text: text, page: page) { photoData, error in
+            if page > 1 {
+                guard let photoArray = photoData?.photos?.photo else {return}
+                self.photoData?.photos?.photo?.append(contentsOf: photoArray)
+            } else {
+                self.photoData = photoData
+            }
             
             DispatchQueue.main.async {
                 self.checkNoResults()
@@ -101,7 +108,9 @@ extension ViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let text = textField.text {
-            self.searchPhotos(text: text)
+            //Rest pagination on any text changes
+            self.lastGottenPage = 1
+            self.searchPhotos(text: text, page: lastGottenPage)
         }
         self.dismissKeyboard()
         return true
@@ -137,6 +146,27 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         if let imageUrlString = photoObject?.urlL {
             self.showImageDetailsViewController(imageURL: imageUrlString)
+        }
+    }
+}
+
+extension ViewController: UITableViewDataSourcePrefetching {
+    //Quick and dirty infinate scroll this would be better with a diffable data source
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        if let row = indexPaths.first?.row {
+            if row >= (self.lastGottenPage * 20){
+                print("getting data")
+                self.lastGottenPage += 1
+                self.searchPhotos(text: searchTextField.text ?? "", page: self.lastGottenPage)
+            }
+        }
+        
+        //smooth scrolling and reduce image load time
+        for indexPath in indexPaths {
+            let photoObject = photoData?.photos?.photo?[indexPath.row]
+            if let imageUrlString = photoObject?.urlS {
+                imageLoader.obtainImageWithPath(imagePath: imageUrlString) { image in}
+            }
         }
     }
 }
